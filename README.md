@@ -98,3 +98,8 @@ fastapi-data-validator/
 ## Author
 
 Anurag Gupta — Senior Software Engineer | AI Engineering
+
+## Docker Commands
+
+#docker build -t fastapi-data-validator .
+#docker run -p 8000:8000 fastapi-data-validator
