@@ -71,6 +71,22 @@ POST /api/v1/validate
 }
 ```
 
+### Example of Failed Requests
+```json
+{
+  "table_name": "customer_accounts",
+  "data": [
+    {"customer_id": 1, "email": "a@test.com", "balance": 500},
+    {"customer_id": 2, "email": null, "balance": 1500},
+    {"customer_id": 2, "email": "c@test.com", "balance": -50}
+  ],
+  "rules": [
+    {"column_name": "customer_id", "not_null": true, "unique": true},
+    {"column_name": "email", "not_null": true, "unique": false},
+    {"column_name": "balance", "not_null": true, "min_value": 0}
+  ]
+}
+```
 ## Project Structure
 
 fastapi-data-validator/
